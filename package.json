@@ -1,0 +1,26 @@
+{
+  "name": "promises-retry",
+  "version": "1.0.0",
+  "description": "Retry promises with exponential back-off strategy. Exit on custom logic before the maximum number of retries.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/index"
+  },
+  "keywords": [
+    "retry",
+    "promise",
+    "promise-retry"
+  ],
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "author": "Suditu Tudor",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0"
+  },
+  "dependencies": {
+    "node-readme": "^0.1.9"
+  }
+}
