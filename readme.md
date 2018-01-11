@@ -1,4 +1,4 @@
-# Project Title
+# Promises Retry
 
 Retry promises with exponential back-off strategy. Exit on custom logic before the maximum number of retries.
 
