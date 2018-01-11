@@ -1,6 +1,6 @@
 # Promises Retry
 
-Retry promises with exponential back-off strategy. Exit on custom logic before the maximum number of retries.
+Retry promises with exponential back-off strategy. Exit on custom logic before the maximum number of retries. No external dependencies used.
 
 ### Installing
 
