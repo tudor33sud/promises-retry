@@ -6,6 +6,12 @@ Retry promises with exponential back-off strategy. Exit on custom logic before t
 
 npm install promises-retry
 
+### Prerequisites
+
+Works only on node >=7.6
+
+If you want to test the module, you need to have mocha installed on your machine.
+
 ## Usage
 
 `const retry = require('promises-retry');`
@@ -48,9 +54,7 @@ async function(){
 * **minTimeout** - the number of milliseconds before starting a retry(defaults to **1000**)
 * **exit** - **function(attempt,err)** utility function for implementing custom logic to exit retrying if some condition is fulfilled. Useful for implementing fast exit for a promise, for example if a connection times out.(defaults to **false** )
 
-### Prerequisites
 
-If you want to test the module, you need to have mocha installed on your machine.
 
 ## Running the tests
 

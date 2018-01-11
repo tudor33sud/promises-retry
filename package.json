@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Retry promises with exponential back-off strategy. Exit on custom logic before the maximum number of retries.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tudor33sud/promises-retry"
+  },
   "scripts": {
     "test": "mocha ./test/index"
   },
