@@ -46,7 +46,7 @@ async function(){
 * **retries** - the number of retries for a promise(defaults to **10**)
 * **factor** - the exponential factor to use(defaults to **2**)
 * **minTimeout** - the number of milliseconds before starting a retry(defaults to **1000**)
-* **exit** - **function(attempt,err)** utility function for implementing custom logic to exit retrying if some condition is fulfilled. Useful for implementing fast exit for a promise, for example if a connection times out.
+* **exit** - **function(attempt,err)** utility function for implementing custom logic to exit retrying if some condition is fulfilled. Useful for implementing fast exit for a promise, for example if a connection times out.(defaults to **false** )
 
 ### Prerequisites
 
