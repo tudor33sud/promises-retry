@@ -12,15 +12,25 @@ Works only on node >=7.6
 
 If you want to test the module, you need to have mocha installed on your machine.
 
+##Signature
+
+`retry(fn,args,options)`
+* **fn** - reference to function which returns a promise
+* **args** - arguments which should be applied to the function when getting executed
+* **options** - options object (refer below for in depth overview)
+
 ## Usage
 
 `const retry = require('promises-retry');`
 
+
 Using default retry parameters:
 ```javascript
+
 async function(){
     try{
-        const result = retry(promise);
+        //fn - function which returns a promise
+        const result = retry(fn,args);
         //use the result
     } catch(err){
         //your promise failed to execute after the number of retries(by default 10)
@@ -32,7 +42,7 @@ Using custom configuration:
 ```javascript
 async function(){
     try{
-        const result = retry(promise,{
+        const result = retry(fn, args, {
         retries:3,
         minTimeout:500,
         exit:(attempt,err)=>{
@@ -47,7 +57,7 @@ async function(){
     }
 }
 ```
-### Available parameters
+### Available options parameters
 
 * **retries** - the number of retries for a promise(defaults to **10**)
 * **factor** - the exponential factor to use(defaults to **2**)
