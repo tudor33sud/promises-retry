@@ -14,7 +14,7 @@ If you want to test the module, you need to have mocha installed on your machine
 
 ##Signature
 
-`retry(fn,args,options)`
+`retry(fn,options)`
 * **fn** - anonymus function wrapper for a function that returns a promise
 * **options** - options object (refer below for in depth overview)
 
