@@ -8,21 +8,21 @@
 
 
 /**
- * Helper to provide easy retry for 
- * @param {Promise} fn 
- * @param {retryOptions} options 
+ * Helper to provide easy retry for a function which returns a promise
+ * @param {Function} fn function that returns the promise
+ * @param {Array<String>} args arguments which should be applied to the function
+ * @param {retryOptions} options retry options
  */
-async function retry(fn, options) {
+async function retry(fn, args, options) {
     const opts = Object.assign({}, {
         retries: 5,
         factor: 2,
         minTimeout: 1000,
         exit: (attempt, err) => { return false }
     }, options || {});
-
     for (let i = 0; i < opts.retries; i++) {
         try {
-            return await fn;
+            return await fn(...args);
         } catch (err) {
             const currentAttempt = i + 1;
             err.retry = {
