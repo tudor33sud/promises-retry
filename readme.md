@@ -15,8 +15,7 @@ If you want to test the module, you need to have mocha installed on your machine
 ##Signature
 
 `retry(fn,args,options)`
-* **fn** - reference to function which returns a promise
-* **args** - arguments which should be applied to the function when getting executed
+* **fn** - anonymus function wrapper for a function that returns a promise
 * **options** - options object (refer below for in depth overview)
 
 ## Usage
@@ -30,7 +29,7 @@ Using default retry parameters:
 async function(){
     try{
         //fn - function which returns a promise
-        const result = retry(fn,args);
+        const result = retry(()=> { return functionThatReturnsPromise() });
         //use the result
     } catch(err){
         //your promise failed to execute after the number of retries(by default 10)
@@ -42,7 +41,7 @@ Using custom configuration:
 ```javascript
 async function(){
     try{
-        const result = retry(fn, args, {
+        const result = retry(()=> { return functionThatReturnsPromise() }, {
         retries:3,
         minTimeout:500,
         exit:(attempt,err)=>{
