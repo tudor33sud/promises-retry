@@ -9,11 +9,10 @@
 
 /**
  * Helper to provide easy retry for a function which returns a promise
- * @param {Function} fn function that returns the promise
- * @param {Array<String>} args arguments which should be applied to the function
+ * @param {Function} fn anonymus function wrapper for a function that returns a promise
  * @param {retryOptions} options retry options
  */
-async function retry(fn, args, options) {
+async function retry(fn, options) {
     const opts = Object.assign({}, {
         retries: 5,
         factor: 2,
@@ -22,7 +21,7 @@ async function retry(fn, args, options) {
     }, options || {});
     for (let i = 0; i < opts.retries; i++) {
         try {
-            return await fn(...args);
+            return await fn();
         } catch (err) {
             const currentAttempt = i + 1;
             err.retry = {
