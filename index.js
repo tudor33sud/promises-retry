@@ -27,13 +27,13 @@ async function retry(fn, options) {
             err.retry = {
                 attempts: currentAttempt
             };
-            if (opts.exit(currentAttempt, err) == true) {
+            if (opts.exit(currentAttempt, err) === true) {
                 throw err;
             }
             const exponentialTimeout = Math.pow(opts.factor, i) * 100;
             const waitTime = exponentialTimeout > opts.minTimeout ? exponentialTimeout : opts.minTimeout;
             await wait(waitTime);
-            if (currentAttempt == opts.retries)
+            if (currentAttempt === opts.retries)
                 throw err;
         }
     }
