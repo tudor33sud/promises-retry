@@ -1,6 +1,6 @@
 {
   "name": "promises-retry",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Retry promises with exponential back-off strategy. Exit on custom logic before the maximum number of retries.",
   "main": "index.js",
   "repository": {

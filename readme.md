@@ -29,7 +29,7 @@ Using default retry parameters:
 async function(){
     try{
         //fn - function which returns a promise
-        const result = retry(()=> functionThatReturnsPromise() );
+        const result = await retry(()=> functionThatReturnsPromise() );
         //use the result
     } catch(err){
         //your promise failed to execute after the number of retries(by default 10)
@@ -41,7 +41,7 @@ Using custom configuration:
 ```javascript
 async function(){
     try{
-        const result = retry(()=> functionThatReturnsPromise(), {
+        const result = await retry(()=> functionThatReturnsPromise(), {
         retries:3,
         minTimeout:500,
         exit:(attempt,err) => {
